@@ -3,8 +3,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const tetopage = (req, res) => {
-    const PORT = process.env.PORT || 8080;
-    const fullUrl = `http://127.0.0.1:${PORT}`; // Or use req.protocol + '://' + req.get('host')
+    const env = process.env.ENVIRONMENT || "prod"
+    let fullUrl = ""
+    if (env == "dev") {
+        const PORT = process.env.PORT || 8080;
+        const BASE_URL = process.env.BASE_URL || "http://127.0.0.1:";
+        fullUrl = `${BASE_URL}${PORT}`; // Or use req.protocol + '://' + req.get('host')
+    } else (
+        fullUrl = `${BASE_URL}`
+    )
 
     res.send(`
         <!DOCTYPE html>

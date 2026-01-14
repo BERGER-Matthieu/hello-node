@@ -13,14 +13,7 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
-app.get("/", (req, res) => tetopage(req, res)); // Fix this line
-
-
-/*
-app.get("/pages/:pageName", (req, res) => {
-    res.sendFile(`${__dirname}/src/pages/${req.params.pageName}.html`);
-})
-*/
+app.get("/", (req, res) => tetopage(req, res));
 
 app.get("/img/:imgName", (req, res) => {
     res.sendFile(`${__dirname}/src/img/${req.params.imgName}.jpg`);
@@ -30,10 +23,13 @@ app.get("/styles/:styleName", (req, res) => {
     res.sendFile(`${__dirname}/src/styles/${req.params.styleName}.css`);
 })
 
-app.get("/random-teto-music", (req, res) => {
-    res.send(randomTetoMusic());
-})
+app.get("/random-teto-music", (req, res) => res.send(randomTetoMusic()));
 
+/*
+app.get("/pages/:pageName", (req, res) => {
+    res.sendFile(`${__dirname}/src/pages/${req.params.pageName}.html`);
+})
+*/
 
 app.listen(PORT, () => {
     console.log("server is running on 127.0.0.1:8080")
