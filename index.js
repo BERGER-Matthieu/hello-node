@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from "path";
 import express from 'express';
 import { randomTetoMusic } from './src/scripts/scripts.js';
+import { tetopage } from './src/pages/teto.js';
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -12,9 +13,14 @@ const __dirname = dirname(__filename);
 
 const app = express();
 
+app.get("/", (req, res) => tetopage(req, res)); // Fix this line
+
+
+/*
 app.get("/pages/:pageName", (req, res) => {
     res.sendFile(`${__dirname}/src/pages/${req.params.pageName}.html`);
 })
+*/
 
 app.get("/img/:imgName", (req, res) => {
     res.sendFile(`${__dirname}/src/img/${req.params.imgName}.jpg`);
