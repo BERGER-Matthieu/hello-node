@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    background-image: url("http://127.0.0.1:3000/img/pearto");
+    background-image: url("http://127.0.0.1:80/img/pearto");
     background-repeat: repeat;
 }
 

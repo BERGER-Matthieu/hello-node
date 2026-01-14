@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://127.0.0.1:3000/styles/teto">
+    <link rel="stylesheet" href="http://127.0.0.1:80/styles/teto">
     <title>test</title>
 </head>
 <body>
     
     <div class="h-box">
         <div class="teto-img-box flip-z">
-            <img class="teto-img" src="http://127.0.0.1:3000/img/teto" alt="">
+            <img class="teto-img" src="http://127.0.0.1:80/img/teto" alt="">
         </div>
         <h1 id="title">Click</h1>
         <div class="teto-img-box">
-            <img class="teto-img" src="http://127.0.0.1:3000/img/teto" alt="">
+            <img class="teto-img" src="http://127.0.0.1:80/img/teto" alt="">
         </div>
     </div>
 
@@ -24,7 +24,7 @@
     const title = document.getElementById("title");
 
     title.addEventListener("click", async() => {
-        const res = await fetch("http://127.0.0.1:3000/random-teto-music")
+        const res = await fetch("http://127.0.0.1:80/random-teto-music")
             .then(response => response.text());
         
         window.location.href = `https://www.youtube.com/watch?v=${res}`;
