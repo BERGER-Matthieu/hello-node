@@ -2,6 +2,10 @@ import { fileURLToPath } from 'url';
 import { dirname } from "path";
 import express from 'express';
 import { randomTetoMusic } from './src/scripts/scripts.js';
+import dotenv from "dotenv";
+
+dotenv.config();
+const PORT = process.env.PORT;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,7 +29,7 @@ app.get("/random-teto-music", (req, res) => {
 })
 
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log("server is running on 127.0.0.1:8080")
 })
 
