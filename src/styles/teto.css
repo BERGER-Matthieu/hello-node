@@ -1,0 +1,69 @@
+/*------VARS------*/
+:root {
+    --xs: 1rem;
+    --s: 2rem;
+    --m: 3rem;
+    --l: 5rem;
+    --xl: 8rem;
+    --xxl: 13rem;
+
+    --teto-hex: #ff636a
+}
+
+/*------Global------*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/*------TAGS------*/
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("http://127.0.0.1:3000/img/pearto");
+    background-repeat: repeat;
+}
+
+h1 {
+    background-color: black;
+    color: var(--teto-hex);
+    height: var(--m);
+    text-decoration: underline;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+/*------BLOC------*/
+.h-box {
+    gap: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.teto-img-box {
+    height: var(--m);
+    aspect-ratio: 1;
+}
+
+
+/*------ELEMENT------*/
+.teto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*------MODIFIER------*/
+.flip-z {
+    transform: rotateY(180deg);
+}
